@@ -1,11 +1,15 @@
 getgenv().Depth = {
-   SilentAim = {
+   Aimbot = {
+       Keybind = "Q",
        Prediction = {
            Amount = 0.1,
-           AutoPrediction = {
+           Auto_Prediction = {
                Enabled = true,
-               Math = true,
-               PingTable = {
+               Ping_Based = true,
+               Distance_Based = true,
+               Use_Ping_Table = true,
+               Ping_Table = {
+                   [0] = 0.1,
                    [10] = 0.11,
                    [20] = 0.12,
                    [30] = 0.13,
@@ -15,30 +19,39 @@ getgenv().Depth = {
                    [70] = 0.17,
                    [80] = 0.18,
                    [90] = 0.19,
-                   [100] = 0.20
+                   [100] = 0.2
                }
            }
        },
-       TargetPart = "HumanoidRootPart",
-       FOV = {
-           Radius = 80,
-           Visible = true,
-           Stick = true,
-           Color = Color3.fromRGB(173, 216, 230)
-       }
-   },
-   Highlight = {
-       Enabled = true,
-       FillColor = Color3.fromRGB(173, 216, 230),
-       OutlineColor = Color3.fromRGB(0, 0, 0),
-       FillTransparency = 0.5,
-       OutlineTransparency = 0
-   },
-   Movement = {
-       SpeedGlitch = {
+       Camera = {
+           Smoothing = 1
+       },
+       Target_Part = "UpperTorso",
+       Jump_Offset = -1.5,
+       Auto_Air = {
            Enabled = true,
-           Button = true,
-           Key = "X"
+           Delay = {
+               Enabled = false,
+               Delay_Amount = 1.5
+           }
+       },
+       Notify = true
+   },
+   Macro = {
+       Enabled = true,
+       Keybind = "X"
+   },
+   Visuals = {
+       FOV = {
+           Enabled = true,
+           Radius = 120,
+           Color = Color3.fromRGB(173, 216, 230),
+           Transparency = 0.4
+       },
+       Highlight = {
+           Enabled = true,
+           Fill_Color = Color3.fromRGB(173, 216, 230),
+           Outline_Color = Color3.fromRGB(0, 0, 0)
        }
    }
 }
